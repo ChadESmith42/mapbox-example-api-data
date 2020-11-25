@@ -1,0 +1,37 @@
+﻿﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Kansas City, MO | Dangerous Buildings Locations</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1 id="page-header">Kansas City, MO | Dangerous Buildings Locations</h1>
+    </header>
+    <div class="clearfix"></div>
+    <div id="map">
+    </div>
+    <div id="text">
+        <h2 id="data-status">Updated daily.</h2>
+        <p> Dangerous Buildings cases are evaluated in accordance with building code standards to determine if they are a candidate for demolition.</p>
+        <p>
+            Private owners are generally given at least 30 days to conduct work to repair or demolish their property before the City will take action. The more severe the damage, the shorter the timeline the property owner has to avoid City action, which can include
+            municipal court summons, fines, and demolition by City contractors (the cost of which is then assessed against the property owner).
+        </p>
+        <p>
+            Data source: (<i class="fa fa-external-link" aria-hidden="true"></i>) <a href="https://data.kcmo.org/Property/Dangerous-Buildings-List/ax3m-jhxx " target="_blank ">https://data.kcmo.org/Property/Dangerous-Buildings-List/ax3m-jhxx<a>
+        </p>
+
+    </div>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+    <!-- Link to AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="dangerousbuildings.js"></script>
+</body>
+</html>
