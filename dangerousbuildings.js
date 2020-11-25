@@ -42,7 +42,8 @@ map.on("load", () => {
             type: "symbol",
             source: "home",
             layout: {
-                "icon-image": "custom-marker"
+                "icon-image": "custom-marker",
+                "icon-size": 0.60
             }
         });
         //Create variable that will be passed to Angular model for populating table of
@@ -57,6 +58,10 @@ map.on("load", () => {
             console.log(lookup);
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            const formatDate = (date) => {
+                return new Date(date).toDateString();
             }
             //Adds the class="popups" attribute to each HTML popup element for CSS styling. Additional classes
             //should be comma-separated values.
@@ -73,7 +78,7 @@ map.on("load", () => {
                     "</h3><ul><li>Case Number: " +
                     e.features[0].properties.casenumber +
                     " </li><li>Date Case Started: " +
-                    e.features[0].properties.case_opened +
+                    formatDate(e.features[0].properties.case_opened) +
                     "</li><li>Status of Case: " +
                     e.features[0].properties.statusofcase +
                     "</li></ul>"
@@ -82,6 +87,8 @@ map.on("load", () => {
         });
     });
 });
+
+
 
 $('#map').on('click', '.trigger', () => {
     lookup = e.features[0].properties.address;
